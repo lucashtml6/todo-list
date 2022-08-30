@@ -19,7 +19,19 @@ button > i {
   margin: 40px 0;
 }
 
-.titulo-principal {
+.header {
+  display: flex;  
+  align-items: center;
+  gap: 10px;
+}
+
+.header img {
+  width: 50px;
+  height: 50px;
+  order: 1;
+}
+
+.header .titulo-principal {
   font-size: 3.5rem;
 }
 
