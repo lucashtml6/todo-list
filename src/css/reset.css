@@ -12,3 +12,7 @@ input {
   outline: none;
   border: none;
 }
+
+button > i {
+  pointer-events: none;
+}

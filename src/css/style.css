@@ -6,12 +6,17 @@ body {
   align-items: center;
 }
 
+button > i {
+  pointer-events: none;
+}
+
 .container-todo {
   background-color: #fff;
   border-radius: 10px;
   padding: 20px;
   width: 600px;
   box-shadow: 0px 6px 0px 6px rgba(0, 0, 0, 0.418);
+  margin: 40px 0;
 }
 
 .titulo-principal {
@@ -33,6 +38,7 @@ body {
   justify-content: center;
   align-items: center;
   box-shadow: inset 0px -2px 0px 1px #0d011d;
+  /* pointer-events: none; */
   cursor: pointer;
 }
 
@@ -48,6 +54,11 @@ body {
   border: #0000003d solid 2px;
   border-radius: 5px;
   font-weight: 600;
+  transition: .2s border ease-in-out;
+}
+
+#adicionar:focus {
+  border: #00000069 solid 2px;
 }
 
 .line {
@@ -70,41 +81,69 @@ body {
   margin-bottom: 10px;
   padding: 10px;
   box-shadow: 0px 3px 0px 3px rgb(167, 167, 167);
+  transition: .3s ease-out;
 }
 
-.container-text-tarefa {
-  flex: 2;
+.tarefa h3 {
+  flex: 1;
 }
 
-.container-buttons-tarefa {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-}
-
-
-.btn-tarefa {
-  background-color: #1c033f;
+.tarefa .btn-tarefa {
   color: #fff;
   width: 30px;
   height: 30px;
   cursor: pointer;
   border-radius: 5px;
   box-shadow: inset 0px -2px 0px 1px #0d011d;
+  margin-left: 2px;
 }
 
-.btn-tarefa:hover {
-  box-shadow: none;
-  transform: translateY(2px);
+.tarefa .btn-tarefa i {
+  pointer-events: none;
 }
 
-.btn-tarefa#concluir {
+.tarefa .btn-tarefa.concluir {
   background-color: #025302;
   box-shadow: inset 0px -2px 0px 1px rgb(2, 54, 2);
 }
 
-.btn-tarefa#remover {
+.tarefa .btn-tarefa.remover {
   background-color: #6e0000;
   box-shadow: inset 0px -2px 0px 1px #570000;
 }
 
+.tarefa .btn-tarefa.remover    i {
+  pointer-events: none;
+}
+
+.tarefa .btn-tarefa:hover {
+  box-shadow: none;
+  transform: translateY(2px);
+}
+
+#validacao {
+  color: #ff0000;
+}
+
+.tarefa.done {
+  background-color: #025302;
+  box-shadow: 0px 3px 0px 3px #023f02;
+}
+
+.tarefa.done .btn-tarefa:hover {
+  box-shadow: none;
+  transform: translateY(2px);
+}
+
+.tarefa.done .concluir {
+  background-color: #acbe01;
+  box-shadow: inset 0px -2px 0px 1px #748100;
+}
+
+.tarefa.done h3 {
+  color: #fff;
+}
+
+#text-placeholder.hide {
+  display: none;
+}
